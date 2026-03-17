@@ -40,11 +40,6 @@
   opacity: 1;
 }
 
-.page-toc a.active {
-  font-weight: 700;
-  opacity: 1;
-}
-
 @media (max-width: 1400px) {
   .page-toc {
     display: none;
