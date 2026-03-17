@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const title = document.createElement("div");
   title.className = "page-toc-title";
-  title.textContent = "On this page";
   toc.appendChild(title);
 
   const list = document.createElement("ul");
