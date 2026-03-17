@@ -24,6 +24,7 @@ Note that, to write an ASM  model of a system, the file containing the ASM spec 
  ASM structure definition and take the ".asm"
  extension (e.g. MyAsmModel.asm).
 
+<!--
 ## Index
 
 1. [Notational conventions](#notConv)
@@ -34,7 +35,7 @@ Note that, to write an ASM  model of a system, the file containing the ASM spec 
 8. [Transition rules](05_transition_rules.md) 
 4. [Syntactic rules on ID names](#id)
 9. [Comments](#comments)
-
+-->
 
 ## Notational Conventions
 
