@@ -1,6 +1,4 @@
----
-title: Terms
----
+# Terms
 
 
 There are two types of terms, *basic terms* as in first-order logic (*variables*, *constants* and *function
