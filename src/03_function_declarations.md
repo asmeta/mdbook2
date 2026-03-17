@@ -1,6 +1,4 @@
----
-title: Function Declarations
----
+# Function Declarations
 
 
 To declare an ASM function
