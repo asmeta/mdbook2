@@ -20,9 +20,8 @@ This quick guide gives a description of each part by presenting the notation in 
  for better readability, instead of reporting the grammar productions. For
  a more formal definition see the [EBNF grammar](https://asmeta.github.io/material/AsmetaL_EBNF.html).
 
-Note that, to write an ASM  model of a system, the file containing the ASM spec must contain a single
- ASM structure definition and take the ".asm"
- extension (e.g. MyAsmModel.asm).
+Note that, to write an ASMETA model of a system, the file containing the ASMETA specification must contain a single
+ ASM structure definition and take the `.asm`  extension (e.g. `MyAsmModel.asm`).
 
 <!--
 ## Index
@@ -40,11 +39,9 @@ Note that, to write an ASM  model of a system, the file containing the ASM spec 
 ## Notational Conventions
 
 
-In this guide the following
-conventions are adopted:
+In this guide the following conventions are adopted:
 
- - the AsmM
-     concrete syntax appears in red text
+ - the AsmM concrete syntax appears in red text
 
  - keywords appear in bold face
 
