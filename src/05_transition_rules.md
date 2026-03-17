@@ -1,6 +1,4 @@
----
-title: Transition Rules
----
+# Transition Rules
 
 In a given state, a
 transition rule of an ASM produces for each variable assignment an update set
