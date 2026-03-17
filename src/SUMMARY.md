@@ -2,7 +2,7 @@
 
 - [AsmetaL — Reference Guide](index.md)
 - [Structure of an ASM](01-structure-of-an-asm.md)
-  - [Asm declaration](01-structure-of-an-asm.md#asm-declaration)
+  - [ASMETA declaration](01-structure-of-an-asm.md#asmeta-declaration)
   - [Header](01-structure-of-an-asm.md#header)
 - [Domain declarations](02_domain_declaration.md)
 - [Function declarations](03_function_declarations.md)
