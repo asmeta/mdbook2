@@ -2,3 +2,7 @@
 code.hljs .keyword { font-weight: 600; }
 code.hljs .number { opacity: 0.9; }
 code.hljs .operator { color: inherit; }
+
+.hljs-keyword {
+  color: #d73a49; /* rosso (stile GitHub) */
+}
