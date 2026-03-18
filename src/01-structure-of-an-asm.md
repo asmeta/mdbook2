@@ -5,7 +5,7 @@ section.
 
 ## ASMETA declaration
 ```asmeta
- [asyncr] asm *name*
+[asyncr] asm name
 ```
 [ <span style="color: red;">asyncr</span> ] <span style="color: red;">asm</span> *name*
 
