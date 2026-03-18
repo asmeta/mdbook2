@@ -8,10 +8,6 @@ section.
 [asyncr] asm name
 ```
 
-```js
-hljs.getLanguage('asmeta')
-```
-
 [ <span style="color: red;">asyncr</span> ] <span style="color: red;">asm</span> *name*
 
 ## HEADER
