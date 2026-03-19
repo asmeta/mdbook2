@@ -1,13 +1,14 @@
 # Structure of an ASMETA model
 
-An ASMETA model is structured into four sections: a header, an initialization, a body, and a main rule. The schema below shows the concrete notation for each
-section.
+An ASMETA model is structured into four sections: a header, an initialization, a body, and a main rule.
+The schema below shows the concrete notation for each section.
 
 ## ASMETA declaration
 
 ```asmeta
 [asyncr] asm name
 ```
+
 
 [ <span style="color: red;">asyncr</span> ] <span style="color: red;">asm</span> *name*
 
