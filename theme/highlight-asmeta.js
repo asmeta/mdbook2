@@ -1,15 +1,13 @@
 hljs.registerLanguage('asmeta', function(hljs) {
   return {
     name: 'Asmeta',
+    aliases: ['asmeta'],
     case_insensitive: true,
-
     keywords: {
-      keyword:
-        'asyncr asm if then else let in when return module import export signature',
+      keyword: 'asyncr asm if then else let in when return module import export signature',
       literal: 'true false null',
       built_in: 'print assert assert_eq'
     },
-
     contains: [
       {
         className: 'keyword',
@@ -21,6 +19,10 @@ hljs.registerLanguage('asmeta', function(hljs) {
       {
         className: 'number',
         begin: '\\b(0x[0-9A-Fa-f]+|\\d+(\\.\\d+)?)\\b'
+      },
+      {
+        className: 'operator',
+        begin: '->|=>|=|\\+|-|\\*|\\/|\\^|:|\\.'
       }
     ]
   };
