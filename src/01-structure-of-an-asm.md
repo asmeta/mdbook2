@@ -4,6 +4,7 @@ An ASMETA model is structured into four sections: a header, an initialization, a
 section.
 
 ## ASMETA declaration
+
 ```asmeta
 [asyncr] asm name
 ```
