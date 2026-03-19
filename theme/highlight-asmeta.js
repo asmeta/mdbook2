@@ -26,8 +26,10 @@ hljs.registerLanguage('asmeta', function(hljs) {
       }
     ]
   };
-  document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('pre code.language-asmeta').forEach((block) => {
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('pre code.language-asmeta').forEach(function(block) {
     hljs.highlightElement(block);
   });
 });
