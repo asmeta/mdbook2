@@ -1,28 +1,50 @@
-hljs.registerLanguage('asmeta', function(hljs) {
+/*
+ * Highlight.js language definition for ASMETA (Abstract State Machines)
+ * Author: Copilot
+ */
+
+hljs.registerLanguage('asmeta', function (hljs) {
+
+  const KEYWORDS = [
+    // ASMETA structure
+    'asm', 'signature', 'domains', 'domain', 'functions', 'function',
+    'controlled', 'monitored', 'derived', 'static',
+
+    // Rules
+    'rule', 'if', 'then', 'else', 'endif',
+    'forall', 'exists', 'choose', 'seq', 'par', 'let', 'in',
+
+    // Types / domain constructors
+    'enum', 'abstract', 'record', 'case', 'of',
+
+    // Other reserved words
+    'import', 'default', 'init', 'upd', 'with'
+  ].join(' ');
+
   return {
-    name: 'Asmeta',
-    aliases: ['asmeta'],
-    case_insensitive: true,
-    keywords: {
-      keyword: 'asyncr asm if then else let in when return module import export signature',
-      literal: 'true false null',
-      built_in: 'print assert assert_eq'
-    },
+    name: 'ASMETA',
+    keywords: KEYWORDS,
+
     contains: [
+
+      // Commenti
+      hljs.COMMENT('//', '$'),
+
+      // Stringhe
       {
-        className: 'keyword',
-        begin: '\\b(asyncr|asm|if|then|else|let|in|when|return|module|import|export|signature)\\b'
+        className: 'string',
+        begin: '"',
+        end: '"',
+        contains: [{ begin: '\\\\.' }]   // escape sequences
       },
-      hljs.QUOTE_STRING_MODE,
-      hljs.C_LINE_COMMENT_MODE,
-      hljs.C_BLOCK_COMMENT_MODE,
+
+      // Numeri
+      hljs.NUMBER_MODE,
+
+      // Identificatori
       {
-        className: 'number',
-        begin: '\\b(0x[0-9A-Fa-f]+|\\d+(\\.\\d+)?)\\b'
-      },
-      {
-        className: 'operator',
-        begin: '->|=>|=|\\+|-|\\*|\\/|\\^|:|\\.'
+        className: 'symbol',
+        begin: /[A-Za-z_][A-Za-z0-9_]*/
       }
     ]
   };
