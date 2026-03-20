@@ -1,5 +1,7 @@
-# My Awesome mdBook
+# asmeta docs using markdown and mdbook 
 
-This repository contains an example mdBook project ready for publishing to GitHub Pages.
+https://github.com/rust-lang/mdBook/
 
-Build locally with `mdbook build` and serve with `mdbook serve`.
+We use this one since it allowa the dfefinition of new langauges highlighting 
+
+- for now, it contains the reference guide for asmeta language 
