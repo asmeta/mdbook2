@@ -250,7 +250,7 @@ default init Id :
  the unique agent are respectively the ASM's *main rule* (see [Main rule](#Mainrule)) and the ASM's name.
 -->
 
-## Structure of an ASMETA module
+## ASMETA module
 
 A lightweight notion of *module* is also supported. An ASMETA module is an ASM without a main rule and without initialization. 
 We write a module in the same way as ASMs, with the keyword **asm** replaced by the keyword **module**.
