@@ -132,29 +132,29 @@ invariant Iv over idv1,…,idvsv : termv ]
 * *termi* is a term (see section [Terms](#terms)) representing the boolean-valued expression of the constraint.
 * *TLPROP* is one of:
   * CTL properties:
-```asmeta
-[ CTLSPEC | ctlspec ]
-```
+  ```asmeta
+  [ CTLSPEC | ctlspec ]
+  ```
   * LTL properties:
-```asmeta
-[ LTLSPEC | ltlspec ]
-```
+  ```asmeta
+  [ LTLSPEC | ltlspec ]
+  ```
   * A justice constraint consists of a formula *f*, which is assumed to be true infinitely often in all the fair paths:
-```asmeta
-[ JUSTICE | justice ]
-```
+  ```asmeta
+  [ JUSTICE | justice ]
+  ```
   * It indicates a justice constraint as well (in NuSMV it has been kept for backward compatibility):
-```asmeta
-[ FAIRNESS | fairness ]
-```
+  ```asmeta
+  [ FAIRNESS | fairness ]
+  ```
   * A compassion constraint consists of a pair of formulas (p,q); if property p is true infinitely often in a fair path, then also formula q has to be true infinitely often in the fair path:
-```asmeta
-[ COMPASSION | compassion ]
-```
+  ```asmeta
+  [ COMPASSION | compassion ]
+  ```
   * Invariants (assumptions about the state):
-```asmeta
-[ INVAR | invar ]
-```
+  ```asmeta
+  [ INVAR | invar ]
+  ```
 
  
 ### Main
