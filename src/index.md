@@ -41,7 +41,7 @@ Note that, to write an ASMETA model of a system, the file containing the ASMETA 
 
 In this guide the following conventions are adopted:
 
- - the AsmM concrete syntax appears in red text
+ - the AsmM concrete syntax appears in <span style="color: #9d5bc2;">violet</span>violet text
 
  - keywords appear in bold face
 
