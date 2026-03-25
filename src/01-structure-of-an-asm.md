@@ -42,8 +42,6 @@ default init s0:
 [asyncr] asm name
 ```
 
-[ <span style="color: red;">asyncr</span> ] <span style="color: red;">asm</span> *name*
-
 ## Header
 
 ### IMPORT/EXPORT
