@@ -41,7 +41,7 @@ In the following, we analyze each component of the ASMETA model in detail.
 ```asmeta
 [asyncr] asm name
 ```
-where:</br> - *name* is the name of the ASMETA model. It must be equal to the name of the file (as *name.asm*). The keyword **asyncr** specifies if the ASM is an *asynchronous* multi-agent or not. If omitted, the ASMETA model is considered a *synchronous* multi-agent ASM.
+where *name* is the name of the ASMETA model. It must be equal to the name of the file (as *name.asm*). The keyword **asyncr** specifies if the ASM is an *asynchronous* multi-agent or not. If omitted, the ASMETA model is considered a *synchronous* multi-agent ASM.
 
 
 ## Header
@@ -54,7 +54,11 @@ where:</br> - *name* is the name of the ASMETA model. It must be equal to the na
 ]
 [ export id1,...,ide ]  or   [ export * ]
 ``` 
-</br> -*m1,...,mk* are the names of the imported modules</br> - idi1,...,idihi are names for domains, functions and rules which are imported from module mi (if they are omitted all the content of the export clause of mi is imported);</br>- id1,...,ide are names for domains, functions and rules which can be exported from the ASM. **export*** denotes that all functions and rules of the ASM can be exported; 
+* *m1,...,mk* are the names of the imported modules</br> 
+* *idi1,...,idihi* are names for domains, functions and rules which are imported from module mi (if they are omitted all the content of the export clause of mi is imported);
+* id1,...,ide are names for domains, functions and rules which can be exported from the ASM.
+
+  **export*** denotes that all functions and rules of the ASM can be exported; 
 
  ### SIGNATURE
 <span style="color: red;">`signature:`</span> </br> [ dom_decl1 ... dom_decln ] </br> [ fun_decl1 ... fun_declm ]
