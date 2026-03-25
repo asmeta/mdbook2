@@ -158,10 +158,62 @@ invariant Iv over idv1,…,idvsv : termv ]
 
  
 ### Main
+```asmeta
+main rule R = rule
+```
+* *R* is the name of the main rule; 
+* *rule* is a transition rule (see section [Transition rules](#rules)).
+* If the ASM has no main rule, as a default, the ASM starts executing in parallel the agent programs as specified by the agent initialization clauses (see [initializations](#initASM)) in the initial state.
 
 ### Initialization
+```asmeta
+[ init I1 :
+      [  domain D11 = Dterm11  ...
+         domain D1n1 = Dterm1n1
+      ]
+      [  function F11 [(  p11 in d11,...,p1s1 in d1s1 )]= Fterm11 ...
+         function F1m1 [( pm11 in dm11,...,pm1sm1 in dm1sm1 )]= Fterm1m1
+      ]
+      [  agent A11 : r11  ...
+         agent A1u1 : r1u1
+       ]
+  ...
+]
+default init Id :
+      [  domain Dd1 = Dterm11 ...
+         domain Ddnd = Dtermdnd
+      ]
+      [  function Fd1 [( p11 in d11,...,p1s1 in d1s1 )]= Ftermd1 ...
+         function Fdmd [( pmd1 in dmd1,...,pmdsmd in dmdsmd )]= Ftermdmd
+      ]
+      [
+         agent Ad1 : rd1 ...
+         agent Adud : rdud
+      ]
+[ ...
+   init It :
+       [ domain Dt1 = Dtermt1 ...
+         domain Dtnt = Dtermtnt
+       ]
+       [  function Ft1 [( p11 in d11,...,p1s1 in d1s1 )]= Ftermt1 ...
+          function Ftmt[( pmt1 in dmt1,...,pmtsmt in dmtsmt )] = Ftermtmt
+       ]
+       [  agent At1 : rt1 ...
+          agent Atut: rtut
+       ]
+]
+```
 
+* *I1,...,Id,...,It* are names for the initial states of the ASM;
+* the default initial state *Id* is compulsory; 
+* *Dij* are names of dynamic concrete domains, already declared in the signature (see [Header](#headerASM)) and initialized in the initial state *Ii*;
+* *Fij* are names of dynamic functions, already declared in the signature (see [Header](#headerASM)) and initialized in the initial state *Ii*;
+* *pij* are variable terms which specify the formal parameters of the corresponding function, and *dij* are the domains where *pij* take their value; 
+* *Ftermij* e *Dtermij* are terms (see section [Terms](#terms)) specifying the initial value for the function *Fij* and domain *Dij*;
+* *Aij* and *rtut* are agent domains (concrete sub-domains of the Agent type-domain) and rules assigned as *programs* to the agents, respectively.  If no agent initialization clause is specified, by default, the ASM is assumed to be *single-agent* and the program and the identifier of
+ the unique agent are respectively the ASM's *main rule* (see [Main rule](#Mainrule)) and the ASM's name.
 
+<!--
 | **Model element** | **Concrete syntax** |
 | --- | --- |
 | **Asm declaration**  | [ <span style="color: red;">asyncr</span> ] <span style="color: red;">asm</span> *name* |
@@ -196,16 +248,65 @@ invariant Iv over idv1,…,idvsv : termv ]
  If no agent initialization clause is specified, as default the ASM is
  assumed *single-agent* and the program and the identifier of
  the unique agent are respectively the ASM's *main rule* (see [Main rule](#Mainrule)) and the ASM's name.
+-->
 
-### Structure of an ASM module
+## Structure of an ASMETA module
 
-A
-lightweight notion of *module* is also supported. An ASM module is an
-ASM without a main rule and without a characterization of the set of initial
-states. We write a module in the same way as ASMs with the keyword **asm** replaced by the
-keyword **module**.
+A lightweight notion of *module* is also supported. An ASMETA module is an ASM without a main rule and without initialization. 
+We write a module in the same way as ASMs, with the keyword **asm** replaced by the keyword **module**.
 
+```asmeta
+module name
+```
+where *name* is the name of the ASMETA module. It must be equal to the name of the ASMETA file (as *name.asm*).
+
+This example defines a simple ASMETA model of a counter that ranges from 0 to 60 by introducing a module.
+
+```asmeta
+module counterModule 
+
+//Header
+import StandardLibrary 
+
+signature:
+ domain Sixty subsetof Integer
+ controlled count: Integer
+
+//Body
+definitions:
+domain Sixty = {0 : 60}
+
+macro rule r_Increment =
+ count := count + 1
+
+
+```asmeta
+asm counter 
+
+//Header
+import counterModule 
+
+signature:
+ 
+//Body
+definitions:
+
+//Main rule
+main rule r_Main =
+ if count = 60 then
+   count := 0
+ else
+  r_Increment[]
+ endif
+
+//Initialization
+default init s0:
+ function count = 0
+```
+
+<!--
 | | **module** name where name is the name of the ASM module. It must be equal to the name of the ASM file (as name.asm). |
 | --- | --- |
 | **Header** | [ **import** m1 [**(** id11,...,id1h1 **)**] **...** **import** mk [**(** idk1,...,idkhk **)**] ] [ **export** id1,...,ide ] or [ **export *** ] **signature** **:** [ dom_decl1 ... dom_decln ] [ fun_decl1 ... fun_declm ] where: - m1,...,mk are the names of the imported modules - idi1,...,idihi are names for domains, functions and rules which are imported from module mi (if they are omitted all the content of the export clause of mi is imported); - id1,...,ide are names for domains, functions and rules which can be exported from the module. **export*** denotes that all functions and rules of the module can be exported; - dom_decl1,...,dom_decln are declarations of domains used in the ASM (see section [Domain declarations](#domdecl)); - fun_decl1,...,fun_declm are declarations of functions used in the ASM (see section [Function declarations](#funDecl)). |
 | **Body** | **definitions :** [ **domain** D1 **=** Dterm1 ... **domain**Dd **=** Dtermd ] [ **function** F1 [**(** p11 **in** d11,...,p1k1 **in** d1k1 **)**]**=** Fterm1 ... **function** Ff [**(** pf1 **in** df1,...,pfkf **in** dfkf **)**]**=** Ftermf ] [ **rule** [**macro**]R1 [**(** x11 **in** b11,...,x1k **in** b1k1 **)**] = rule1 ... **rule** [**macro**] Rr [**(** xr1 **in** br1,...,xrkr **in** brkr **)**] = ruler ] [ **axiom** **over** id11,...,id1s1 : term1 ... **axiom over**idv1,...,idvsv : termv ] where: - D1,...,Dd are names of static concrete domains declared in the signature (see [Header](#headerASM)); - F1,...,Ff are names of static or derived functions declared in the signature (see [Header](#headerASM)); - Dterm1,...,Dtermd and Fterm1,...,Ftermf are terms (see section [Terms](#terms)); - pij are variables which specify the formal parameters of the function Fi, and dij are the domains where pij take their value; - R1,...,Rr are names for transition rules (see section [Transition rules](#rules)); - xij are variables which specify the formal parameters of the rule Ri, and bij are the domains where pij take their value; - rule1,...,ruler are transition rules (see section [Transition rules](#rules)); - idij are names of domains, functions* and rules constrained by the axioms; - termi is a term (see section [Terms](#terms)) representing the boolean-valued expression of the constraint. *When functions are overloaded it is necessary to indicate their domain, as in f(d) with f is the function name and d is the name of the function domain. |
+-->
