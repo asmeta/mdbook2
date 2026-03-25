@@ -92,7 +92,7 @@ function Ff [( pf1 in df1,…,pfkf in dfkf )]= Ftermf
 * *F1,...,Ff* are names of static or derived functions declared in the signature (see [Header](#headerASM));
 *  *Fterm1,...,Ftermf* are terms (see section [Terms](#terms));
 *  *pij* are variables which specify the formal parameters of the function *Fi*, and *dij* are the domains where *pij* take their value.
-*  
+  
 #### Macro Rule Definitions
 ```asmeta
 [macro] rule R1 [( x11 in b11,…,x1k1 in b1k1 )] = rule1 …
