@@ -104,12 +104,13 @@ function Ff [( pf1 in df1,…,pfkf in dfkf )]= Ftermf
     
 #### Turbo Rule Definitions
 ```asmeta
-turbo rule TR1 [( x11 in b11,…,x1k1 in b1k1 )] [ in b1] = rule1 …
-turbo rule TRr [( xr1 in br1,…,xrkr in brkr )] [inbx]= ruler
+turbo rule TR1 [( x11 in b11,…,x1k1 in b1k1 )] [in b1] = rule1 …
+turbo rule TRr [( xr1 in br1,…,xrkr in brkr )] [in bx]= ruler
 ```
 
 * *TR1,...,TRr* are names for turbo rules;
 * *xij* are variables which specify the formal parameters of the turbo rule *TRi*, and *bij* are the domains where *xij* take their value;
+*  *bi* are domains where the return values of turbo rules (with return value) range;
 * *rule1,...,ruler* are transition rules (see section [Transition rules](#rules)).
   
 #### Invariant Definitions
