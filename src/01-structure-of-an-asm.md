@@ -79,27 +79,49 @@ definitions:
 domain D1 = Dterm1 …
 domain Ds = Dterms
 ```
+
+* *D1,...,Dd* are names of static concrete domains declared in the signature (see [Header](#headerASM)); 
+* *Dterm1,...,Dtermd* are terms (see section [Terms](#terms)).
+
 #### Function Definitions
 ```asmeta
 function F1 [( p11 in d11,…,p1k1 in d1k1 )]= Fterm1 …
 function Ff [( pf1 in df1,…,pfkf in dfkf )]= Ftermf
 ```
+
+* *F1,...,Ff* are names of static or derived functions declared in the signature (see [Header](#headerASM));
+*  *Fterm1,...,Ftermf* are terms (see section [Terms](#terms));
+*  *pij* are variables which specify the formal parameters of the function *Fi*, and *dij* are the domains where *pij* take their value.
+*  
 #### Macro Rule Definitions
 ```asmeta
 [macro] rule R1 [( x11 in b11,…,x1k1 in b1k1 )] = rule1 …
 [macro] rule Rr [( xr1 in br1,…,xrkr in brkr )] = ruler
 ```
+* *R1,...,Rr* are names for macro rules;
+* *xij* are variables which specify the formal parameters of the macro rule *Ri*, and *bij* are the domains where *xij* take their value;
+* *rule1,...,ruler* are transition rules (see section [Transition rules](#rules));
+    
 #### Turbo Rule Definitions
 ```asmeta
 turbo rule TR1 [( x11 in b11,…,x1k1 in b1k1 )] [ in b1] = rule1 …
 turbo rule TRr [( xr1 in br1,…,xrkr in brkr )] [inbx]= ruler
 ```
+
+* *TR1,...,TRr* are names for turbo rules;
+* *xij* are variables which specify the formal parameters of the turbo rule *TRi*, and *bij* are the domains where *xij* take their value;
+* *rule1,...,ruler* are transition rules (see section [Transition rules](#rules)).
+  
 #### Invariant Definitions
 ```asmeta
 invariant I1 over id11,…,id1s1 : term1 …
 invariant Iv over idv1,…,idvsv : termv 
 ```
+* *I1,...,Iv* are names for invariants;
+* *idij* are names of domains, functions (when functions are overloaded, it is necessary to indicate their domain, as in f(d)with f the function name and d the name of the function domain), and rules constrained by the invariants;
+* *termi* is a term (see section [Terms](#terms)) representing the boolean-valued expression of the constraint.
 
+  
 ### Main
 
 ### Initialization
