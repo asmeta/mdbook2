@@ -48,15 +48,15 @@ where *name* is the name of the ASMETA model. It must be equal to the name of th
 
 ### Import/Export
 ```asmeta
-[ import m1 [( id11,...,id1h1 )]
+[ import m₁ [( id₁₁,...,id₁ₕ₁ )]
  ...
- import mk [( idk1,...,idkhk )]
+ import mₖ [( idₖ₁,...,idₖₕₖ )]
 ]
-[ export id1,...,ide ]  or   [ export * ]
+[ export id₁,...,idₑ ]  or   [ export * ]
 ``` 
-* *m1,...,mk* are the names of the imported modules</br> 
-* *idi1,...,idihi* are names for domains, functions and rules which are imported from module mi (if they are omitted all the content of the export clause of mi is imported);
-* id1,...,ide are names for domains, functions and rules which can be exported from the ASM.
+* *m₁,...,mₖ* are the names of the imported modules</br> 
+* *idᵢ₁,...,idᵢₕᵢ* are names for domains, functions and rules which are imported from module mi (if they are omitted all the content of the export clause of mi is imported);
+* id₁,...,idₑ are names for domains, functions and rules which can be exported from the ASM.
 
   **export*** denotes that all functions and rules of the ASM can be exported; 
 
