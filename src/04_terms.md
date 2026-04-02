@@ -5,30 +5,6 @@ There are two types of terms, *basic terms* as in first-order logic (*variables*
 applications)* and *extended terms* to represent special terms like *tuple* *terms*, *collection terms* (sets, maps, sequences, bags), the *conditional term*, *variable-binding
 terms*, etc.
 
-  - [Basic Terms](#basTerms)
-    - [ConstantTerm](#ConstT)
-    - [VariableTerm](#VarT)
-    - [FunctionTerm](#FunT)
-    - [Location Term](#LocationT)
-  - [Extended Terms](#extTerms)
-    - [TupleTerm](#TupleT)
-    - [SequenceTerm](#SequenceT)
-    - [SequenceCT](#SeqCT)
-    - [SetTerm](#SetT)
-    - [SetCT](#SetCT)
-    - [BagTerm](#BagT)
-    - [BagCT](#BagCT)
-    - [MapTerm](#MapT)
-    - [MapCT](#MapCT)
-    - [ConditionalTerm](#ConditT)
-    - [CaseTerm](#CaseT)
-    - [LetTerm](#LetT)
-    - [ExistTerm](#ExistT)
-    - [ExistUniqueTerm](#ExistUniqT)
-    - [ForallTerm](#forallT)
-    - [DomainTerm](#DomT)
-    - [RuleAsTerm](#RuleAsT)
-  - [Infix Operators table](#infixOp)
 
 ### Basic Terms
 
