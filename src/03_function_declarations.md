@@ -65,18 +65,18 @@ asm AutomaticDoor
 import StandardLibrary
 
 signature:
- controlled doorOpen: Boolean
- monitored motionDetected: Boolean
- shared peopleCount: Integer
- out doorStatus: String
+ controlled doorOpen: Boolean //true: the door is open, false: the door is closed
+ monitored motionDetected: Boolean //true: there is a person in front of the dor
+ shared peopleCount: Integer //number of people entered in the room
+ out doorStatus: String // Out message
 
 definitions:
  main rule r_Main =
   if motionDetected then
    par
     doorOpen := true
-    doorStatus := "open"
     peopleCount := peopleCount + 1
+    doorStatus := "open - number of people in the room: " + toString(peopleCount+1) 
    endpar
   else
     if peopleCount=0 then
